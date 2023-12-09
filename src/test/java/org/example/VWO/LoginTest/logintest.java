@@ -7,7 +7,12 @@ import org.example.pages.PageObjectModel.LoginPage_POM;
 import org.example.utils.PropertyReader;
 import org.testng.annotations.Test;
 
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
+
 public class logintest extends CommonToAllTest {
+
+
 
     @Test(priority = 1)
     public void testLoginNegative() throws Exception {
@@ -17,14 +22,14 @@ public class logintest extends CommonToAllTest {
         LoginPage_POM pagepom = new LoginPage_POM();
         pagepom.openUrl(PropertyReader.readkey("url"));
         String error = pagepom.loginToVWONegative();
-        System.out.println(error);
+        System.out.println("Error message:-" +error);
         Assertions.assertThat(error).isNotNull().isNotBlank().contains(PropertyReader.readkey("error_message"));
 
 
     }
 
 
-    @Test(priority = 2)
+    @Test(groups = {"QA"})
     public void testLoginPositive() throws Exception {
 
         //How to enter username , password and enter to dashboard and verify

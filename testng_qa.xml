@@ -2,12 +2,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/eardbas/IdeaProjects/SeleniumAdvanceFrameWork">
+        <groups>
+            <run>
+                <include name="QA"/>
+            </run>
+        </groups>
         <classes>
-            <class name="org.example.VWO.LoginTest.logintest">
-                <methods>
-                    <include name="testLoginNegative"/>
-                </methods>
-            </class>
+        <class name="org.example.VWO.LoginTest.logintest">
+        </class>
         </classes>
     </test>
 </suite>
